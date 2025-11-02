@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Secondary Component</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen flex items-center justify-center p-8">
+    <div class="container mx-auto max-w-6xl">
+        <!-- Grid layout matching Figma design - row for buttons, row for labels -->
+        <div class="flex flex-col gap-6">
+            <!-- Button Row -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                <div class="flex flex-col gap-2 items-center">
+                    <button class="btn-secondary btn-xxs" id="interactiveButton-xxs">
+                        <span>Secondary Button</span>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <button class="btn-secondary btn-xs" id="interactiveButton-xs">
+                        <span>Secondary Button</span>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <button class="btn-secondary btn-sm" id="interactiveButton-sm">
+                        <span>Secondary Button</span>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <button class="btn-secondary btn-md" id="interactiveButton-md">
+                        <span>Secondary Button</span>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <button class="btn-secondary btn-lg" id="interactiveButton-lg">
+                        <span>Secondary Button</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Label Row -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                <div class="flex flex-col gap-2 items-center">
+                    <p class="text-lg font-semibold text-[#242424]">size: xxs</p>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <p class="text-lg font-semibold text-[#242424]">size: xs</p>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <p class="text-lg font-semibold text-[#242424]">size: sm</p>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <p class="text-lg font-semibold text-[#242424]">size: md</p>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <p class="text-lg font-semibold text-[#242424]">size: lg</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Base Button Styles - Following Figma Variables */
+        .btn-secondary {
+            /* Color Variables - button-secondary-basic using neutral tone colors */
+            --bg-color: transparent; /* button/secondary/surface-default */
+            --text-color: #404040; /* button/secondary/basic/text-default (neutral tone) */
+            --border-color: #8c8c8c; /* button/secondary/basic/border-default (neutral tone) */
+            --border-width: 1px;
+            
+            /* Common typography */
+            --font-family: 'Inter', sans-serif; /* typography/font-family/name */
+
+            /* Apply styles */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-color);
+            border: var(--border-width) solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            font-family: var(--font-family);
+            color: var(--text-color);
+            white-space: nowrap;
+            
+            /* Remove default browser outline */
+            outline: none;
+        }
+        
+        /* XXS Size - caption-xs-medium */
+        .btn-xxs {
+            /* component/button/xxs/height: 24px */
+            /* component/button/xxs/horizontal-padding: 8px */
+            /* component/button/xxs/border-radius: 6px */
+            /* component/button/xxs/gap: 4px */
+            height: 24px;
+            padding: 0 8px;
+            border-radius: 6px;
+            gap: 4px;
+            
+            /* caption-xs-medium */
+            font-size: 12px;
+            font-weight: 500; /* Medium */
+            line-height: 19px;
+            letter-spacing: 0.25px;
+        }
+
+        /* XS Size - caption-sm-medium */
+        .btn-xs {
+            /* component/button/xs/height: 32px */
+            /* component/button/xs/horizontal-padding: 12px */
+            /* component/button/xs/border-radius: 6px */
+            /* component/button/xs/gap: 8px */
+            height: 32px;
+            padding: 0 12px;
+            border-radius: 6px;
+            gap: 8px;
+            
+            /* caption-sm-medium */
+            font-size: 14px;
+            font-weight: 500; /* Medium */
+            line-height: 22px;
+            letter-spacing: 0.25px;
+        }
+
+        /* SM Size - body-md-semi-bold */
+        .btn-sm {
+            /* component/button/sm/height: 36px */
+            /* component/button/sm/horizontal-padding: 12px */
+            /* component/button/sm/border-radius: 8px */
+            /* component/button/sm/gap: 8px */
+            height: 36px;
+            padding: 0 12px;
+            border-radius: 8px;
+            gap: 8px;
+            
+            /* body-md-semi-bold */
+            font-size: 16px;
+            font-weight: 600; /* Semi Bold */
+            line-height: 24px;
+            letter-spacing: 0px;
+        }
+
+        /* MD Size - body-md-semi-bold */
+        .btn-md {
+            /* component/button/md/height: 44px */
+            /* component/button/md/horizontal-padding: 12px */
+            /* component/button/md/border-radius: 8px */
+            /* component/button/md/gap: 8px */
+            height: 44px;
+            padding: 0 12px;
+            border-radius: 8px;
+            gap: 8px;
+            
+            /* body-md-semi-bold */
+            font-size: 16px;
+            font-weight: 600; /* Semi Bold */
+            line-height: 24px;
+            letter-spacing: 0px;
+        }
+
+        /* LG Size - body-lg-semi-bold */
+        .btn-lg {
+            /* component/button/lg/height: 48px */
+            /* component/button/lg/horizontal-padding: 12px */
+            /* component/button/lg/border-radius: 8px */
+            /* component/button/lg/gap: 8px */
+            height: 48px;
+            padding: 0 12px;
+            border-radius: 8px;
+            gap: 8px;
+            
+            /* body-lg-semi-bold */
+            font-size: 18px;
+            font-weight: 600; /* Semi Bold */
+            line-height: 27px;
+            letter-spacing: 0px;
+        }
+        
+        /* Hover State - All sizes - button-secondary-basic hover */
+        .btn-secondary:hover {
+            --bg-color: rgba(140, 140, 140, 0.08); /* neutral tone hover background */
+            --text-color: #262626; /* button/secondary/basic/text-hover (neutral-800) */
+            --border-color: #737373; /* button/secondary/basic/border-hover (neutral-600) */
+        }
+
+        /* Pressed/Active State - All sizes - button-secondary-basic pressed */
+        .btn-secondary:active {
+            --bg-color: rgba(140, 140, 140, 0.16); /* neutral tone pressed background */
+            --text-color: #1a1a1a; /* button/secondary/basic/text-pressed (neutral-900) */
+            --border-color: #525252; /* button/secondary/basic/border-pressed (neutral-700) */
+            transform: scale(0.98);
+        }
+
+        /* Focused State - Only show on keyboard navigation */
+        .btn-secondary:focus-visible {
+            /* Using Figma focus-ring variables - neutral tone */
+            /* focus-ring/neutral */
+            /* focus-ring-effect/x-offset: 0 */
+            /* focus-ring-effect/y-offset: 0 */
+            /* focus-ring-effect/blur: 0 */
+            /* focus-ring-effect/spread: 4 */
+            box-shadow: 0 0 0 4px rgba(140, 140, 140, 0.25); /* neutral focus ring */
+        }
+        
+        /* Hide focus ring on click */
+        .btn-secondary:focus:not(:focus-visible) {
+            box-shadow: none;
+        }
+
+        /* Selected State - All sizes - button-secondary-basic selected */
+        .btn-secondary.selected {
+            --bg-color: rgba(140, 140, 140, 0.12); /* neutral tone selected background */
+            --text-color: #1a1a1a; /* button/secondary/basic/text-selected (neutral-900) */
+            --border-color: #525252; /* button/secondary/basic/border-selected (neutral-700) */
+            box-shadow: 0 0 0 2px rgba(140, 140, 140, 0.2); /* neutral selected ring */
+        }
+    </style>
+
+    <script>
+        // Interactive button functionality for all sizes
+        ['xxs', 'xs', 'sm', 'md', 'lg'].forEach(size => {
+            const button = document.getElementById(`interactiveButton-${size}`);
+            if (button) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.classList.toggle('selected');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
