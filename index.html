@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Component</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen flex items-center justify-center p-8">
+    <div class="container mx-auto max-w-6xl">
+        <!-- Grid layout matching Figma design - row for buttons, row for labels -->
+        <div class="flex flex-col gap-6">
+            <!-- Button Row -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                <div class="flex flex-col gap-2 items-center">
+                    <button class="btn-primary btn-xxs" id="interactiveButton-xxs">
+                        <span>Primary Button</span>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <button class="btn-primary btn-xs" id="interactiveButton-xs">
+                        <span>Primary Button</span>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <button class="btn-primary btn-sm" id="interactiveButton-sm">
+                        <span>Primary Button</span>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <button class="btn-primary btn-md" id="interactiveButton-md">
+                        <span>Primary Button</span>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <button class="btn-primary btn-lg" id="interactiveButton-lg">
+                        <span>Primary Button</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Label Row -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+                <div class="flex flex-col gap-2 items-center">
+                    <p class="text-lg font-semibold text-[#242424]">size: xxs</p>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <p class="text-lg font-semibold text-[#242424]">size: xs</p>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <p class="text-lg font-semibold text-[#242424]">size: sm</p>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <p class="text-lg font-semibold text-[#242424]">size: md</p>
+                </div>
+                <div class="flex flex-col gap-2 items-center">
+                    <p class="text-lg font-semibold text-[#242424]">size: lg</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Base Button Styles - Following Figma Variables */
+        .btn-primary {
+            /* Color Variables */
+            --bg-color: #1c62dc; /* button/primary/surface-default */
+            --text-color: #ffffff; /* button/primary/basic/text-default */
+            
+            /* Common typography */
+            --font-family: 'Inter', sans-serif; /* typography/font-family/name */
+
+            /* Apply styles */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-color);
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            font-family: var(--font-family);
+            color: var(--text-color);
+            white-space: nowrap;
+            
+            /* Remove default browser outline */
+            outline: none;
+        }
+        
+        /* XXS Size - caption-xs-medium */
+        .btn-xxs {
+            /* component/button/xxs/height: 24px */
+            /* component/button/xxs/horizontal-padding: 8px */
+            /* component/button/xxs/border-radius: 6px */
+            /* component/button/xxs/gap: 4px */
+            height: 24px;
+            padding: 0 8px;
+            border-radius: 6px;
+            gap: 4px;
+            
+            /* caption-xs-medium */
+            font-size: 12px;
+            font-weight: 500; /* Medium */
+            line-height: 19px;
+            letter-spacing: 0.25px;
+        }
+
+        /* XS Size - caption-sm-medium */
+        .btn-xs {
+            /* component/button/xs/height: 32px */
+            /* component/button/xs/horizontal-padding: 12px */
+            /* component/button/xs/border-radius: 6px */
+            /* component/button/xs/gap: 8px */
+            height: 32px;
+            padding: 0 12px;
+            border-radius: 6px;
+            gap: 8px;
+            
+            /* caption-sm-medium */
+            font-size: 14px;
+            font-weight: 500; /* Medium */
+            line-height: 22px;
+            letter-spacing: 0.25px;
+        }
+
+        /* SM Size - body-md-semi-bold */
+        .btn-sm {
+            /* component/button/sm/height: 36px */
+            /* component/button/sm/horizontal-padding: 12px */
+            /* component/button/sm/border-radius: 8px */
+            /* component/button/sm/gap: 8px */
+            height: 36px;
+            padding: 0 12px;
+            border-radius: 8px;
+            gap: 8px;
+            
+            /* body-md-semi-bold */
+            font-size: 16px;
+            font-weight: 600; /* Semi Bold */
+            line-height: 24px;
+            letter-spacing: 0px;
+        }
+
+        /* MD Size - body-md-semi-bold */
+        .btn-md {
+            /* component/button/md/height: 44px */
+            /* component/button/md/horizontal-padding: 12px */
+            /* component/button/md/border-radius: 8px */
+            /* component/button/md/gap: 8px */
+            height: 44px;
+            padding: 0 12px;
+            border-radius: 8px;
+            gap: 8px;
+            
+            /* body-md-semi-bold */
+            font-size: 16px;
+            font-weight: 600; /* Semi Bold */
+            line-height: 24px;
+            letter-spacing: 0px;
+        }
+
+        /* LG Size - body-lg-semi-bold */
+        .btn-lg {
+            /* component/button/lg/height: 48px */
+            /* component/button/lg/horizontal-padding: 12px */
+            /* component/button/lg/border-radius: 8px */
+            /* component/button/lg/gap: 8px */
+            height: 48px;
+            padding: 0 12px;
+            border-radius: 8px;
+            gap: 8px;
+            
+            /* body-lg-semi-bold */
+            font-size: 18px;
+            font-weight: 600; /* Semi Bold */
+            line-height: 27px;
+            letter-spacing: 0px;
+        }
+        
+        /* Hover State - All sizes */
+        .btn-primary:hover {
+            --bg-color: #1549a8; /* Darker blue for hover */
+        }
+
+        /* Pressed/Active State - All sizes */
+        .btn-primary:active {
+            --bg-color: #0f3478; /* Even darker for pressed */
+            transform: scale(0.98);
+        }
+
+        /* Focused State - Only show on keyboard navigation */
+        .btn-primary:focus-visible {
+            /* Using Figma focus-ring variables */
+            /* focus-ring/brand: #1c62dc40 */
+            /* focus-ring-effect/x-offset: 0 */
+            /* focus-ring-effect/y-offset: 0 */
+            /* focus-ring-effect/blur: 0 */
+            /* focus-ring-effect/spread: 4 */
+            box-shadow: 0 0 0 4px rgba(28, 98, 220, 0.25);
+        }
+        
+        /* Hide focus ring on click */
+        .btn-primary:focus:not(:focus-visible) {
+            box-shadow: none;
+        }
+
+        /* Selected State - All sizes */
+        .btn-primary.selected {
+            --bg-color: #0a2360; /* Darkest for selected */
+            box-shadow: 0 0 0 2px rgba(28, 98, 220, 0.2);
+        }
+    </style>
+
+    <script>
+        // Interactive button functionality for all sizes
+        ['xxs', 'xs', 'sm', 'md', 'lg'].forEach(size => {
+            const button = document.getElementById(`interactiveButton-${size}`);
+            if (button) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.classList.toggle('selected');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
